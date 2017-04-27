@@ -1,0 +1,107 @@
+<div class="container lift">
+    <div class="row">
+        <ol class="breadcrumb place">
+            <li><a href="#">当前位置：首页</a></li>
+            <li><a href="#">社区养老</a></li>
+            <li class="active">离休退休</li>
+        </ol>
+    </div>
+    <div class="row birthday">
+        <dl>
+            <dt><img src="images/img_icon.png" alt=""></dt>
+            <dd>
+                <h4>社区生日会</h4>
+                <p>提供社区五保供养申请的办理指南、注意事项、办理机构等相关的服务。</p>
+            </dd>
+        </dl>
+    </div>
+    <div class="row activity">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs bg-col" role="tablist">
+            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">活动介绍</a></li>
+            <li role="presentation"  ui-sref="mass.info"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab" >查看活动</a></li>
+            <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">活动总结</a></li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content act-cont">
+            <div role="tabpanel" class="tab-pane active" id="home">
+                <div class="row">
+                    <div class="col-md-10">
+                        <div class="info" id="info">
+                            <h2>基本信息</h2>
+                            <ul class="principal">
+                                <li>责任人：张鑫  13023948374</li>
+                                <li>责任人单位：南风里居委会</li>
+                             </ul>
+                        </div>
+                        <div class="info" id="name">
+                            <h2>请输入栏目名称</h2>
+                            <input-file></input-file>
+                        </div>
+                        <div class="info" id="resident">
+                            <h2>评论区</h2>
+                            <ul class="comment" id="comment">
+                                <li ng-repeat="i in list">
+                                    <p class="left">
+                                        <span class="name">{{i.name}}</span>:
+                                        <span class="content">{{i.content}}</span>
+                                    </p>
+                                    <p class="right">
+                                        <span class="times">{{i.time}}</span>
+                                        <span class="reply">回复</span>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p class="left">
+                                        <span class="name">赵大妈</span>:
+                                        <span class="content" ng-bind="textareas"></span>
+                                    </p>
+                                    <p class="right">
+                                        <span class="times">2017-4-27</span>
+                                        <span class="reply">回复</span>
+                                    </p>
+                                </li>
+                            </ul>
+                            <textarea class="form-control" rows="3" ng-model="textareas"></textarea>
+                            <p class="send text-right">
+                                <button type="button" class="btn btn-info">发送</button>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <nav id="navbar-example3" class="navbar nav-side">
+                            <div class="timeline-wrap clearfix">
+                                <span class="circle top"></span>
+                                <span class="circle bottom"></span>
+                                <ul class="nav navbar-nav time-line">
+                                    <li class=""><a href="#info">基本信息</a></li>
+                                    <li class="active"><a href="#name">请输入栏目名称</a></li>
+                                    <li class="dropdown"><a href="#resident">居民预约</a></li>
+                                </ul>
+                            </div>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <!-- 查看活动-->
+            <div role="tabpanel" class="tab-pane" id="profile" data-spy="scroll" data-target="#navbar-example3" data-offset="0">
+
+                    <div ui-view></div>
+            </div>
+            <!-- 活动总结-->
+            <div role="tabpanel" class="tab-pane" id="messages">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="info">
+                            <h2>请输入栏目名称</h2>
+                            <input-file></input-file>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
